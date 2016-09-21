@@ -11,6 +11,7 @@ RUN apt-get update && \
         libldap2-dev \
         curl \
         libtidy* \
+        mysql-client \
     && rm -r /var/lib/apt/lists/*
 
 # PHP Extensions
