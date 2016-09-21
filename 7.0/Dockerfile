@@ -11,6 +11,7 @@ RUN apt-get update && \
         libldap2-dev \
         curl \
         libtidy* \
+        mysql-client \
     && rm -r /var/lib/apt/lists/*
 
 # PHP Extensions
@@ -27,7 +28,7 @@ RUN docker-php-ext-install \
         && docker-php-ext-install gd \
         && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
 	&& docker-php-ext-install ldap
-  
+
 # Memory Limit
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
 
