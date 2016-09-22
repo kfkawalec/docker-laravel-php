@@ -24,6 +24,7 @@ RUN docker-php-ext-install \
     exif \
     tidy \
     zip \
+    opcache \
     	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
         && docker-php-ext-install gd \
         && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
