@@ -12,7 +12,6 @@ Docker images for Laravel built on top of the [official PHP images](https://hub.
 The following modules and extensions have been enabled,
 in addition to those you can already find in the [official PHP image](https://hub.docker.com/r/_/php/):
 
-- `mcrypt`
 - `mbstring`
 - `curl`
 - `json`
@@ -20,8 +19,11 @@ in addition to those you can already find in the [official PHP image](https://hu
 - `exif`
 - `tidy`
 - `zip`
+- `opcache`
 - `gd`
 - `ldap`
+- `intl`
+- `imap`
 - `imagick`
 
 ## Composer
