@@ -27,7 +27,7 @@ in addition to those you can already find in the [official PHP image](https://hu
 - `imagick`
 
 ## Composer
-[Composer](https://getcomposer.org) is installed globally in the all images.
+[Composer](https://getcomposer.org) is installed globally in the 7.0 and 7.1 images.
 
 ## PHPUnit & CodeSniffer
-[PHPUnit](https://phpunit.de/) and [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) are installed globally in the all images.
+[PHPUnit](https://phpunit.de/) and [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) are installed globally in the 7.0 and 7.1 images.
