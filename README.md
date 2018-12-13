@@ -8,7 +8,9 @@ Docker images for Laravel built on top of the [official PHP images](https://hub.
 - [`7.0-fpm` (_7.0/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.0/Dockerfile)
 - [`7.1-fpm` (_7.1/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.1/Dockerfile)
 - [`7.2-fpm` (_7.2/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.2/Dockerfile)
+- [`7.3-fpm` (_7.2/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.3/Dockerfile)
 - [`7.2-fpm-alpine` (_7.2-alpine/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.2-alpine/Dockerfile)
+- [`7.3-fpm-alpine` (_7.2-alpine/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.3-alpine/Dockerfile)
 
 ## Installed extensions
 The following modules and extensions have been enabled,
@@ -29,7 +31,7 @@ in addition to those you can already find in the [official PHP image](https://hu
 - `imagick`
 
 ## Composer
-[Composer](https://getcomposer.org) is installed globally in the 7.0 and 7.1 images.
+[Composer](https://getcomposer.org) is installed globally in the all images.
 
 ## PHPUnit & CodeSniffer
-[PHPUnit](https://phpunit.de/) and [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) are installed globally in the 7.0 and 7.1 images.
+[PHPUnit](https://phpunit.de/) and [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) are installed globally in the all images.
