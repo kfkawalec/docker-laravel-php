@@ -22,8 +22,7 @@ RUN apk add --no-cache tidyhtml-libs tidyhtml-dev \
     && apk del --no-cache tidyhtml-dev
 
 RUN apk add --no-cache zlib-dev \
-    && docker-php-ext-install zip \
-    && apk del --no-cache zlib-dev
+    && docker-php-ext-install zip
 
 RUN docker-php-ext-install opcache
 
