@@ -24,6 +24,8 @@ RUN apk add --no-cache tidyhtml-libs tidyhtml-dev \
 RUN apk add --no-cache libzip-dev zlib-dev \
     && docker-php-ext-install zip
 
+RUN docker-php-ext-install bcmath
+
 RUN docker-php-ext-install opcache
 
 RUN apk add --no-cache libldap openldap-dev \
@@ -40,7 +42,7 @@ RUN apk add --no-cache icu icu-dev \
     && docker-php-ext-install intl \
     && apk del --no-cache icu-dev
 
-RUN apk add --no-cache icu-dev imap c-client libssl1.0 libressl-dev imap-dev \
+RUN apk add --no-cache icu-dev imap c-client libssl1.1 libressl-dev imap-dev \
     && docker-php-ext-configure imap --with-imap-ssl \
     && docker-php-ext-install imap \
     && apk del --no-cache icu-dev libressl-dev imap-dev
