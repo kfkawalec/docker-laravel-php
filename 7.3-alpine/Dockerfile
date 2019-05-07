@@ -21,8 +21,7 @@ RUN apk add --no-cache tidyhtml-libs tidyhtml-dev \
     && apk del --no-cache tidyhtml-dev
 
 RUN apk add --no-cache libzip-dev zlib-dev \
-    && docker-php-ext-install zip \
-    && apk del --no-cache libzip-dev zlib-dev
+    && docker-php-ext-install zip
 
 RUN docker-php-ext-install bcmath
 
@@ -55,6 +54,6 @@ RUN apk add --no-cache libtool imagemagick $PHPIZE_DEPS imagemagick-dev \
 RUN rm -rf /tmp/* /var/cache/apk/*
 
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini \
-    echo "date.timezone=Europe/Warsaw" > $PHP_INI_DIR/conf.d/date_timezone.ini
+    && echo "date.timezone=Europe/Warsaw" > $PHP_INI_DIR/conf.d/date_timezone.ini
 
 RUN php --version

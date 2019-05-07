@@ -52,6 +52,6 @@ RUN apk add --no-cache libtool imagemagick $PHPIZE_DEPS imagemagick-dev \
 RUN rm -rf /tmp/* /var/cache/apk/*
 
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini \
-    echo "date.timezone=Europe/Warsaw" > $PHP_INI_DIR/conf.d/date_timezone.ini
+    && echo "date.timezone=Europe/Warsaw" > $PHP_INI_DIR/conf.d/date_timezone.ini
 
 RUN php --version
