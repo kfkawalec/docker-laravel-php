@@ -23,15 +23,10 @@ in addition to those you can already find in the [official PHP image](https://hu
 - `exif`
 - `tidy`
 - `zip`
+- `bcmath`
 - `opcache`
 - `gd`
 - `ldap`
 - `intl`
 - `imap`
 - `imagick`
-
-## Composer
-[Composer](https://getcomposer.org) is installed globally in the all images.
-
-## PHPUnit & CodeSniffer
-[PHPUnit](https://phpunit.de/) and [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) are installed globally in the all images.

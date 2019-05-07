@@ -1,8 +1,7 @@
 FROM php:7.3-fpm-alpine
 MAINTAINER Krzysztof Kawalec <kf.kawalec@gmail.com>
 
-RUN apk --no-cache update \
-    && apk --no-cache upgrade
+RUN apk --no-cache update
 
 RUN docker-php-ext-install mbstring
 
@@ -22,20 +21,21 @@ RUN apk add --no-cache tidyhtml-libs tidyhtml-dev \
     && apk del --no-cache tidyhtml-dev
 
 RUN apk add --no-cache libzip-dev zlib-dev \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip \
+    && apk del --no-cache libzip-dev zlib-dev
 
 RUN docker-php-ext-install bcmath
 
 RUN docker-php-ext-install opcache
 
-RUN apk add --no-cache libldap openldap-dev \
-    && docker-php-ext-install ldap \
-    && apk del --no-cache openldap-dev
-
 RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-png-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd \
     && apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
+
+RUN apk add --no-cache libldap openldap-dev \
+    && docker-php-ext-install ldap \
+    && apk del --no-cache openldap-dev
 
 RUN apk add --no-cache icu icu-dev \
     && docker-php-ext-configure intl \
@@ -54,10 +54,7 @@ RUN apk add --no-cache libtool imagemagick $PHPIZE_DEPS imagemagick-dev \
 
 RUN rm -rf /tmp/* /var/cache/apk/*
 
-# Memory Limit
-RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
-
-# Time Zone
-RUN echo "date.timezone=Europe/Warsaw" > $PHP_INI_DIR/conf.d/date_timezone.ini
+RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini \
+    echo "date.timezone=Europe/Warsaw" > $PHP_INI_DIR/conf.d/date_timezone.ini
 
 RUN php --version

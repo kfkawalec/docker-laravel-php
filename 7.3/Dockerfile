@@ -1,7 +1,7 @@
 FROM php:7.3-fpm
 MAINTAINER Krzysztof Kawalec <kf.kawalec@gmail.com>
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         openssh-client \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -20,7 +20,6 @@ RUN apt-get update && \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
-# PHP Extensions
 RUN docker-php-ext-install \
         mbstring \
         curl \
@@ -42,10 +41,7 @@ RUN docker-php-ext-install \
     && pecl install imagick \
     && docker-php-ext-enable imagick
 
-# Memory Limit
-RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
-
-# Time Zone
-RUN echo "date.timezone=Europe/Warsaw" > $PHP_INI_DIR/conf.d/date_timezone.ini
+RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini \
+    && echo "date.timezone=Europe/Warsaw" > $PHP_INI_DIR/conf.d/date_timezone.ini
 
 RUN php --version
