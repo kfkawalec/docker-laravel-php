@@ -17,6 +17,8 @@ RUN apt-get update \
         libtidy* \
         libzip-dev \
         mysql-client \
+        telnet \
+        nano \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 

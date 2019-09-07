@@ -51,6 +51,8 @@ RUN apk add --no-cache libtool imagemagick $PHPIZE_DEPS imagemagick-dev \
     && docker-php-ext-enable imagick \
     && apk del --no-cache $PHPIZE_DEPS imagemagick-dev
 
+RUN apk add --no-cache busybox-extras nano
+
 RUN rm -rf /tmp/* /var/cache/apk/*
 
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini \
