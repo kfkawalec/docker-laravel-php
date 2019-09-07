@@ -15,7 +15,7 @@ RUN apt-get update \
         libmagickwand-dev --no-install-recommends \
         curl \
         libtidy* \
-        mysql-client \
+        default-mysql-client \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 

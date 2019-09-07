@@ -39,7 +39,7 @@ RUN apk add --no-cache icu icu-dev \
     && docker-php-ext-install intl \
     && apk del --no-cache icu-dev
 
-RUN apk add --no-cache icu-dev imap c-client libssl1.0 libressl-dev imap-dev \
+RUN apk add --no-cache icu-dev imap c-client libssl1.1 libressl-dev imap-dev \
     && docker-php-ext-configure imap --with-imap-ssl \
     && docker-php-ext-install imap \
     && apk del --no-cache icu-dev libressl-dev imap-dev
